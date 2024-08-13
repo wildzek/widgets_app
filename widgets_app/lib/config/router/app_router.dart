@@ -11,12 +11,12 @@ final appRouter = GoRouter(
     ),
 
     GoRoute(
-      path: '/buttons',
+      path: '/cards',
       builder: (context, state) => const CardsScreen(),
     ),
 
     GoRoute(
-      path: '/cards',
+      path: '/buttons',
       builder: (context, state) => const ButtonsScreen(),
     ),
   ],
