@@ -41,12 +41,12 @@ class _ButtonsView extends StatelessWidget {
                 onPressed: null, child: Text('Elevated Disabled')),
             ElevatedButton.icon(
                 onPressed: () {},
-                icon: const Icon(Icons.access_alarm_rounded),
+                icon: const Icon(Icons.airplane_ticket),
                 label: const Text('Elevated Icon')),
             FilledButton(onPressed: () {}, child: const Text('Filled')),
             FilledButton.icon(
               onPressed: () {},
-              icon: const Icon(Icons.access_time_filled_outlined),
+              icon: const Icon(Icons.screen_lock_portrait_rounded),
               label: const Text('Filled Icon'),
             ),
             OutlinedButton(onPressed: () {}, child: const Text('Outlined')),
