@@ -22,10 +22,36 @@ final slides = <SlideInfo>[
       'assets/Images/3.png'),
 ];
 
-class AppTutorialScreen extends StatelessWidget {
+class AppTutorialScreen extends StatefulWidget {
   static const name = 'Tutorial Screen';
 
   const AppTutorialScreen({super.key});
+
+  @override
+  State<AppTutorialScreen> createState() => _AppTutorialScreenState();
+}
+
+class _AppTutorialScreenState extends State<AppTutorialScreen> {
+  final PageController pageviewController = PageController();
+  bool endReached = false;
+  @override
+  void initState() {
+    super.initState();
+    pageviewController.addListener(() {
+      final page = pageviewController.page ?? 0;
+      if (!endReached && page >= (slides.length - 1.5)) {
+        setState(() {
+          endReached = true;
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    pageviewController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +60,7 @@ class AppTutorialScreen extends StatelessWidget {
       body: Stack(
         children: [
           PageView(
+              controller: pageviewController,
               physics: const BouncingScrollPhysics(),
               children: slides
                   .map((slideData) => _Slide(
@@ -41,7 +68,23 @@ class AppTutorialScreen extends StatelessWidget {
                       caption: slideData.caption,
                       imageUrl: slideData.imageUrl))
                   .toList()),
-          Positioned(right: 20, top: 50, child: TextButton(child: const Text('Salir'), onPressed: () => context.pop(),),)
+          Positioned(
+            right: 20,
+            top: 50,
+            child: TextButton(
+              child: const Text('Salir'),
+              onPressed: () => context.pop(),
+            ),
+          ),
+          endReached
+              ? Positioned(
+                  bottom: 30,
+                  right: 30,
+                  child: FilledButton(
+                    onPressed: () => context.pop(),
+                    child: const Text('Comenzar'),
+                  ))
+              : const SizedBox(),
         ],
       ),
     );
