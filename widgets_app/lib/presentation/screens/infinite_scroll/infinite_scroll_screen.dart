@@ -74,9 +74,13 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
           },
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
           onPressed: () => context.pop(),
-          child: const Icon(Icons.arrow_back_ios_new_outlined)),
-    );
+
+          //child: const Icon(Icons.arrow_back_ios_new_outlined)),
+          child: isLoading ?
+            const CircularProgressIndicator(): const Icon(Icons.arrow_back_ios_new_outlined)),
+      );
   }
 }
