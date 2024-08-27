@@ -27,7 +27,6 @@ class _ButtonsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
     return SizedBox(
       width: double.infinity,
       child: Padding(
@@ -67,7 +66,7 @@ class _ButtonsView extends StatelessWidget {
                 style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Colors.blue),
                 )),
-            CustomButton(),
+            const CustomButton(),
           ],
         ),
       ),
