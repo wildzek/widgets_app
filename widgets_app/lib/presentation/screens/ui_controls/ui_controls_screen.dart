@@ -1,4 +1,3 @@
-import 'package:widgets_app/config/theme/menu_items/menu_items.dart';
 import 'package:widgets_app/presentation/screens/screens.dart';
 
 class UiControlsScreen extends StatelessWidget {
@@ -12,7 +11,7 @@ class UiControlsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('UI Controls'),
       ),
-      body: _UiControlsView(),
+      body: const _UiControlsView(),
     );
   }
 }
