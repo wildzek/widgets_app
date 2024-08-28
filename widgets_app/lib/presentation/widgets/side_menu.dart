@@ -29,13 +29,38 @@ class _SideMenuState extends State<SideMenu> {
             padding: EdgeInsets.fromLTRB(28, hasNotch ? 0 : 20, 16, 10),
             child: Text('Main'),
           ),
-          ...appMenuItems.map(
-            
+          ...appMenuItems
+            .sublist(0,3)
+
+            .map(
             (item) => NavigationDrawerDestination(
               icon: Icon(item.icon),
               label: Text(item.title),
             ),
-          )
+          ),
+
+          const Padding(
+            padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
+            child: Divider(),
+          ),
+
+          const Padding(
+            padding: EdgeInsets.fromLTRB(28, 10, 16, 10),
+            child: Text('More options'),
+          ),
+
+          ...appMenuItems
+            .sublist(3)
+
+            .map(
+            (item) => NavigationDrawerDestination(
+              icon: Icon(item.icon),
+              label: Text(item.title),
+            ),
+          ),
+
+
+
         ]);
   }
 }
