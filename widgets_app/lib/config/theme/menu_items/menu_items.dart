@@ -11,6 +11,13 @@ class MenuItem {
 
 const appMenuItems = <MenuItem>[
   MenuItem(
+    title: 'Counter Screen',
+    subtitle: 'Cuenta tus pulsaciones',
+    link:'/counter-screen',
+    icon: Icons.add
+   ),
+
+  MenuItem(
     title: 'Botones',
     subtitle: 'Varios botones en Flutter',
     link:'/buttons',
