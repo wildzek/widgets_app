@@ -14,7 +14,7 @@ class CounterScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text('Valor: $clickCounter', style: const TextStyle(fontSize: 25))
+          Text('Valor: $clickCounter', style: Theme.of(context).textTheme.titleLarge)
         ]),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
