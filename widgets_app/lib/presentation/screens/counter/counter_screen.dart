@@ -31,7 +31,7 @@ class CounterScreen extends ConsumerWidget {
           onPressed: () {
             ref.read(counterProvider.notifier).state++;
           },
-          child: const Icon(Icons.add)),
+          child: const Icon(Icons.add_alarm)),
     );
   }
 }
