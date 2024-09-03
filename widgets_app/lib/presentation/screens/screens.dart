@@ -1,4 +1,5 @@
 
+export 'package:widgets_app/presentation/screens/theme_changer/theme_changer_screen.dart';
 export 'package:flutter/material.dart';
 export 'package:widgets_app/presentation/screens/animated/animated_screen.dart';
 export 'package:widgets_app/presentation/screens/app_tutorial/app_tutorial_screen.dart';
