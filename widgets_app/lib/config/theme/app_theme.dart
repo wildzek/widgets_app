@@ -27,8 +27,8 @@ class AppTheme {
       colorSchemeSeed: colorList[selectedColor],
       appBarTheme: const AppBarTheme(centerTitle: false));
 
-  AppTheme copyWith({int? selectedcolor, bool? themeColor}) => AppTheme(
-    selectedColor: selectedColor,
+  AppTheme copyWith({int? selectedColor, bool? themeColor}) => AppTheme(
+    selectedColor: selectedColor ?? this.selectedColor,
     themeColor: themeColor ?? this.themeColor,
   );
 }
